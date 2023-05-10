@@ -1,20 +1,20 @@
 # Progress Bar
 
-[![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
-[![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
-[![License: MIT][license_badge]][license_link]
-
-A Very Good Project created by Very Good CLI.
+A Simple Custom Progress Bar.
 
 ## Installation 💻
 
-**❗ In order to start using Progress Bar you must have the [Flutter SDK][flutter_install_link] installed on your machine.**
+Clone the package repository:
 
+```
+git clone https://github.com/jeconiel12/progress_bar.git
+```
+   
 Add `progress_bar` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  progress_bar:
+  progress_bar: // Fill with package local path
 ```
 
 Install it:
@@ -25,50 +25,61 @@ flutter packages get
 
 ---
 
-## Continuous Integration 🤖
+## Usage
 
-Progress Bar comes with a built-in [GitHub Actions workflow][github_actions_link] powered by [Very Good Workflows][very_good_workflows_link] but you can also add your preferred CI/CD solution.
+Initialize the ProgressBar with required values, it will create a default progress step with default value.
 
-Out of the box, on each pull request and push, the CI `formats`, `lints`, and `tests` the code. This ensures the code remains consistent and behaves correctly as you add functionality or make changes. The project uses [Very Good Analysis][very_good_analysis_link] for a strict set of analysis options used by our team. Code coverage is enforced using the [Very Good Workflows][very_good_coverage_link].
+```dart
+ProgressBar(
+   totalSteps: 4,
+   currentStep: 2,
+)
+```
 
----
+The above code will create a Progress Bar as shown below:
 
+![image](https://github.com/jeconiel12/progress_bar/assets/106535032/67b3cdb4-c615-4db7-ad28-1fe098e7bc54)
+
+## Parameters
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `totalSteps` | Yes | The total number of steps in the progress bar. |
+| `currentStep` | No | The index of current step in the progress bar. Default is 0. |
+| `indicatorColor` | No | The color of the progress bar indicator. Default is `Colors.orange`. |
+| `backgroundColor` | No | The background color of the progress bar. Default is `Colors.grey`. |
+| `barSpacerColor` | No | The color of space between bars. To get the intended purpose, fill it with the color that matches the parent of `ProgressBar` background. If the value is `null`, it will use the `Theme` scaffold background color. |
+| `duration` | No | The duration of the animation that updates the progress bar. Default is `Duration(milliseconds: 500)`. |
+| `curve` | No | The curve used for the animation that updates the progress bar. Default is `Curves.linear`. |
+| `height` | No | The height of the progress bar. Default is `20`. |
+
+## Running Demo
+
+![image](https://github.com/jeconiel12/progress_bar/assets/106535032/cb045f29-b21e-46e7-8840-526824f4c132)
+
+
+Navigate to the example folder:
+
+ ```
+ cd progress_bar/example
+ ```
+
+Install the package dependencies:
+
+ ```
+ flutter pub get
+ ```
+
+Run the example app:
+
+ ```
+ flutter run
+ ```
+   
 ## Running Tests 🧪
 
-For first time users, install the [very_good_cli][very_good_cli_link]:
+To run all widget tests:
 
 ```sh
-dart pub global activate very_good_cli
+flutter test
 ```
-
-To run all unit tests:
-
-```sh
-very_good test --coverage
-```
-
-To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
-
-```sh
-# Generate Coverage Report
-genhtml coverage/lcov.info -o coverage/
-
-# Open Coverage Report
-open coverage/index.html
-```
-
-[flutter_install_link]: https://docs.flutter.dev/get-started/install
-[github_actions_link]: https://docs.github.com/en/actions/learn-github-actions
-[license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[license_link]: https://opensource.org/licenses/MIT
-[logo_black]: https://raw.githubusercontent.com/VGVentures/very_good_brand/main/styles/README/vgv_logo_black.png#gh-light-mode-only
-[logo_white]: https://raw.githubusercontent.com/VGVentures/very_good_brand/main/styles/README/vgv_logo_white.png#gh-dark-mode-only
-[mason_link]: https://github.com/felangel/mason
-[very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
-[very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
-[very_good_cli_link]: https://pub.dev/packages/very_good_cli
-[very_good_coverage_link]: https://github.com/marketplace/actions/very-good-coverage
-[very_good_ventures_link]: https://verygood.ventures
-[very_good_ventures_link_light]: https://verygood.ventures#gh-light-mode-only
-[very_good_ventures_link_dark]: https://verygood.ventures#gh-dark-mode-only
-[very_good_workflows_link]: https://github.com/VeryGoodOpenSource/very_good_workflows
