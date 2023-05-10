@@ -4,7 +4,7 @@ A Simple Custom Progress Bar.
 
 ## Installation 💻
 
-Clone the package repository from Github:
+Clone the package repository:
 
 ```
 git clone https://github.com/jeconiel12/progress_bar.git
@@ -27,7 +27,7 @@ flutter packages get
 
 ## Usage
 
-Initialise the ProgressBar with required values, it will create a default progress step with default value.
+Initialize the ProgressBar with required values, it will create a default progress step with default value.
 
 ```dart
 ProgressBar(
